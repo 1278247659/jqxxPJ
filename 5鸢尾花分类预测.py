@@ -56,3 +56,5 @@ y_pred =svc.predict(x_test)
 # 差值越小表示模型效果越好
 print('SVM的均方差：', metrics.mean_squared_error(y_test, y_pred))
 print('均方根差：', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
+
+#综上的误差分析 即可确定最优的逻辑回归算法
