@@ -8,7 +8,7 @@ data_target = datasets.load_iris()
 data = data_target.data  # 导入数据中的训练集
 target = data_target.target  # 导入数据中的结果集
 
-x_train, x_test, y_train, y_test = train_test_split(data, target, train_size=0.3)
+x_train, x_test, y_train, y_test = train_test_split(data, target, train_size=0.5)
 
 # 不同分类算法模型的比较
 
