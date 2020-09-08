@@ -32,3 +32,5 @@ plt.plot(t, y_test, 'g',label='y_test')
 plt.plot(t, y_pred, 'r',label='y_pred')
 plt.legend()
 plt.show()
+
+# 结果显示 拟合度为1 表示完全可以拟合和预测 说明多变量线性拟合很好
