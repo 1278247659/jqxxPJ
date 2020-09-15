@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 from sklearn.metrics import r2_score
 import pandas as pd
 import numpy as np
+
 # 岭回归是为了解决过拟合的问题 适当添加参数
 file = pd.read_csv('d:/aa罗/data/data/3_film.csv')
 y = file.iloc[:, 0:1]
@@ -12,7 +13,7 @@ x = file.iloc[:, 1:]
 x = np.array(x.values)
 y = np.array(y.values)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4, random_state=1)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=1)
 
 # 导入线性模块
 from sklearn import linear_model
@@ -34,5 +35,6 @@ plt.show()
 # 查看拟合度和误差
 print('R方拟合度：', r2_score(y_test, y_pred))
 mse = metrics.mean_squared_error(y_test, y_pred)
+print('MAE:', metrics.mean_absolute_error(y_test, y_pred))
 print('均方差:', mse)
 print('均方根差:', mse ** 0.5)
