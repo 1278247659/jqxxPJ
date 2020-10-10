@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-from sklearn import metrics
-from sklearn.model_selection import train_test_split
+import seaborn as sns
 from matplotlib import pyplot as plt
 from pandas.plotting import scatter_matrix
+
 
 file = pd.read_csv(r'D:\aa罗\data\data\3_film.csv')
 content = pd.DataFrame(file)
@@ -13,6 +13,7 @@ content = pd.DataFrame(file)
 # plt.hist(content[i])
 # plt.show()
 
+print(sns.boxplot(data=content))
 # 画密度图
 file.plot(kind='density', subplots=True, layout=(2, 2), sharex=False, fontsize=8, figsize=(12, 7))
 # subplots 制作多个子图 layout 子图数量
@@ -20,7 +21,7 @@ file.plot(kind='density', subplots=True, layout=(2, 2), sharex=False, fontsize=8
 plt.show()
 
 # 画箱线图
-file.plot(kind='box', subplots=True, layout=(2, 2), sharex=False, fontsize=8, figsize=(12, 7))
+file.boxplot(figsize=(12, 7))
 # subplots 制作多个子图 layout 子图数量
 # sharex 共享x轴
 plt.show()
